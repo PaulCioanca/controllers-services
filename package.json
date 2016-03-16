@@ -14,5 +14,8 @@
   },
   "author": "",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/pcnc/controllers-services#readme"
+  "homepage": "https://bitbucket.org/pcnc/controllers-services#readme",
+  "dependencies": {
+    "angular-ui-router": "^0.2.18"
+  }
 }
