@@ -2,17 +2,21 @@
 
 angular
 	.module('presentation.login')
-	.service('loginService', loginService);
+	.provider('loginProv', loginProvider);
 
-function loginService($http, $q) {
-	return {
-		login: login
+function loginProvider() {
+	this.$get = function($http, $q) {
+		return {
+			login: angular.bind(this, login, $http, $q)
+		};
 	};
 
-	function login(username, password) {
-		var deferred = $q.defer();
+	this.loginUrl = null;
 
-		$http.get('login/users.json').then(
+	function login(http, q, username, password) {
+		var deferred = q.defer();
+
+		http.get(this.loginUrl).then(
 			function(data) {
 				var users = data.data.users;
 				var user = checkCredentials(username, password, users);

@@ -3,7 +3,8 @@
 angular.module('presentation.login', [
 	'ui.router'
 	])
-	.config(routeConfig);
+	.config(routeConfig)
+    .config(loginConfig);
 
 function routeConfig($stateProvider) {
 
@@ -16,4 +17,8 @@ function routeConfig($stateProvider) {
             templateUrl: 'login/login.html'
         })
         
+}
+
+function loginConfig(loginProvProvider) {
+    loginProvProvider.loginUrl = 'login/users.json';
 }
