@@ -8,4 +8,5 @@
         </div>
         <button ng-click="loginCtrl.login()">Login</button>
     </form>
+    <p class="error-msg" ng-if="loginCtrl.loginError">{{loginCtrl.loginError}}</p>
 </div>

@@ -1,23 +1,26 @@
-'use strict';
+(function(){
+	'use strict';
 
-angular
-	.module('presentation.login')
-	.controller('LoginCtrl', loginController);
+	angular
+		.module('presentation.login')
+		.controller('LoginCtrl', loginCtrl);
 
-function loginController($rootScope, $location, loginProv) {
-	var self = this;
+	function loginCtrl($rootScope, $location, loginProv) {
+		var self = this;
 
-	self.username;
-	self.password;
-	self.login = login;
+		self.username = undefined;
+		self.password = undefined;
+		self.loginError = undefined;
+		self.login = login;
 
-	function login() {
-		loginProv.login(self.username, self.password).then(
-			function(data){
-				$rootScope.$broadcast('login::successful', data);
-				$location.path('account');
-			}, function(error){
-				console.log(error);
-			});
+		function login() {
+			loginProv.login(self.username, self.password).then(
+				function(data){
+					$rootScope.$broadcast('login::successful', data);
+					$location.path('account');
+				}, function(error){
+					self.loginError = error;
+				});
+		}
 	}
-}
+})();
