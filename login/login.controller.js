@@ -4,7 +4,7 @@ angular
 	.module('presentation.login')
 	.controller('LoginCtrl', loginController);
 
-function loginController($rootScope, $location, loginService) {
+function loginController($rootScope, $location, loginProv) {
 	var self = this;
 
 	self.username;
@@ -12,7 +12,7 @@ function loginController($rootScope, $location, loginService) {
 	self.login = login;
 
 	function login() {
-		loginService.login(self.username, self.password).then(
+		loginProv.login(self.username, self.password).then(
 			function(data){
 				$rootScope.$broadcast('login::successful', data);
 				$location.path('account');
