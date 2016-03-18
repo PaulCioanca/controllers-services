@@ -1,0 +1,13 @@
+<div class="edit-menu-items">
+    <h3>Select which menu items should appear in the navbar</h3>
+
+    <ul class="menu-item-list">
+        <li ng-repeat="item in EditMenuItemsCtrl.MenuItemService.getAvailableMenuItems()">
+            <input type="checkbox"
+                   ng-model="EditMenuItemsCtrl.activeMenuItems[item.path]"
+                   ng-click="EditMenuItemsCtrl.updateNavMenu()
+                   "/>
+            {{item.name}}
+        </li>
+    </ul>
+</div>

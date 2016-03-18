@@ -1,14 +1,43 @@
 <!doctype html>
 <html ng-app="presentation">
 <head>
-    <script src="./js/angular.min.js"></script>
+    <link href="./style.css" rel="stylesheet"/>
+
+    <script src="lib/angular.js"></script>
     <script src="./node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="./app.js"></script>
+
+    <!-- Login -->
     <script src="./login/login.js"></script>
     <script src="./login/login.controller.js"></script>
     <script src="./login/login.service.js"></script>
+
+    <!-- Navbar -->
+    <script src="./navbar/navbar.js"></script>
+    <script src="./navbar/navbar.directive.js"></script>
+
+    <!-- Navbar Menu -->
+    <script src="./navbar/navbar-menu/navbar-menu.js"></script>
+    <script src="./navbar/navbar-menu/navbar-menu.directive.js"></script>
+
+    <!-- Settings -->
+    <script src="./settings/settings.js"></script>
+
+    <!-- Settings: Edit account -->
+    <script src="./settings/edit-account/edit-account.js"></script>
+    <script src="./settings/edit-account/edit-account.controller.js"></script>
+
+    <!-- Settings: Edit menu items -->
+    <script src="./settings/edit-menu-items/edit-menu-items.js"></script>
+    <script src="./settings/edit-menu-items/edit-menu-items.controller.js"></script>
+
+    <!-- Settings: Services-->
+    <script src="settings/common-services/menu-item.service.js"></script>
 </head>
 <body>
+
+    <navbar></navbar>
+
   <ui-view></ui-view>
 </body>
 </html>

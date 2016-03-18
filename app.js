@@ -2,7 +2,9 @@
 
 angular.module('presentation', [
 	'ui.router',
-	'presentation.login'
+	'presentation.login',
+	'presentation.navbar',
+	'presentation.settings'
 	])
 	.config(routeConfig);
 

@@ -1,0 +1,13 @@
+<div class="navbar">
+    <div class="left">
+        <navbar-menu ng-if="NavbarController.currentUser"></navbar-menu>
+    </div>
+    <div class="right">
+        <div ng-if="!NavbarController.currentUser">
+            <a ui-sref="login">Login</a>
+        </div>
+        <div ng-if="NavbarController.currentUser">
+            <span>Hello {{NavbarController.currentUser.name}}!</span>
+        </div>
+    </div>
+</div>

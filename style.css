@@ -1,0 +1,62 @@
+html * {
+    box-sizing: border-box;
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial, sans-serif;
+}
+
+html ul {
+    list-style: none;
+}
+
+.navbar {
+    height: 30px;
+    background-color: #333;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.navbar a, navbar span, navbar div {
+    color: white;
+    text-decoration: none;
+    line-height: 30px;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+.navbar .right {
+    float: right;
+    padding: 0 10px;
+}
+
+.navbar .left {
+    padding: 0 5px;
+    float: left;
+}
+
+.navbar .navbar-menu {
+    padding: 0;
+    margin: 0;
+}
+
+.navbar .navbar-menu li {
+    display: inline-block;
+    padding: 0 5px;
+}
+
+.settings .menu {
+    width: 15%;
+    float: left;
+    height: 100%;
+}
+
+.settings .panel {
+    width: 85%;
+    float: right;
+    height: 100%;
+    margin-top: 16px;
+}
+
+.settings .panel h3 {
+    margin: 0;
+}
