@@ -1,8 +1,16 @@
-(function(angular) {
-    angular.module('presentation.settings')
+(function() {
+    angular
+        .module('presentation.settings')
         .factory('MenuItemService', menuItemService);
 
     function menuItemService() {
+
+        var MenuItemService = {
+            getActiveMenuItems: getActiveMenuItems,
+            getAvailableMenuItems: getAvailableMenuItems,
+            setActiveMenuItems: setActiveMenuItems
+        };
+
         var availableMenuItems = [
             {
                 path: 'account',
@@ -17,27 +25,23 @@
                 name: 'Edit menu items'
             }
         ];
-
         var activeMenuItems = [];
+
         activeMenuItems.push(availableMenuItems[0]);
         activeMenuItems.push(availableMenuItems[1]);
 
-        var getAvailableMenuItems = function() {
+        function getAvailableMenuItems() {
             return availableMenuItems;
-        };
+        }
 
-        var getActiveMenuItems = function() {
+        function getActiveMenuItems() {
             return activeMenuItems;
-        };
+        }
 
-        var setActiveMenuItems = function(items) {
+        function setActiveMenuItems(items) {
             activeMenuItems = items;
-        };
+        }
 
-        return {
-            getActiveMenuItems: getActiveMenuItems,
-            getAvailableMenuItems: getAvailableMenuItems,
-            setActiveMenuItems: setActiveMenuItems
-        };
+        return MenuItemService;
     }
-})(window.angular);
+})();

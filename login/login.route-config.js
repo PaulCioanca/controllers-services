@@ -8,6 +8,8 @@
         .module('presentation.login')
         .config(routeConfig);
 
+    routeConfig.$inject = ['$stateProvider'];
+
     function routeConfig($stateProvider) {
 
         $stateProvider

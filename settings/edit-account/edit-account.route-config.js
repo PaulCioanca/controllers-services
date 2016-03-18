@@ -1,10 +1,14 @@
-(function(angular) {
+/**
+ * Created by tciogmarean on 18/03/16.
+ */
+(function(){
     'use strict';
 
-    angular.module('presentation.settings.editAccount', [
-            'ui.router'
-        ])
+    angular
+        .module('presentation.settings.editAccount')
         .config(routeConfig);
+
+    routeConfig.$inject = ['$stateProvider'];
 
     function routeConfig($stateProvider) {
 
@@ -15,4 +19,5 @@
             })
 
     }
-})(window.angular);
+
+})();

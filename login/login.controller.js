@@ -5,6 +5,8 @@
 		.module('presentation.login')
 		.controller('LoginCtrl', loginCtrl);
 
+	loginCtrl.$inject = ['$rootScope', '$location', 'loginProv'];
+
 	function loginCtrl($rootScope, $location, loginProv) {
 		var self = this;
 

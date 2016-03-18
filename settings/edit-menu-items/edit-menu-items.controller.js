@@ -1,30 +1,38 @@
-(function(angular) {
+(function() {
     'use strict';
 
     angular
         .module('presentation.settings.editMenuItems')
-        .controller('EditMenuItemsCtrl', ['MenuItemService', editMenuItemsController]);
+        .controller('EditMenuItemsCtrl', editMenuItemsCtrl);
 
-    function editMenuItemsController(MenuItemService) {
-        this.MenuItemService = MenuItemService;
+    editMenuItemsCtrl.$inject = ['MenuItemService'];
 
-        var activeMenuItems = {};
-        this.MenuItemService.getActiveMenuItems().forEach(function(item) {
-            activeMenuItems[item.path] = true;
-        });
-        this.activeMenuItems = activeMenuItems;
+    function editMenuItemsCtrl(MenuItemService) {
+        var self = this;
 
-        this.updateNavMenu = angular.bind(this, function() {
-            var activeMenuItems = this.activeMenuItems;
+        self.activeMenuItems = {};
+        self.MenuItemService = MenuItemService;
+        self.updateNavMenu = updateNavMenu;
+
+        init();
+
+        function updateNavMenu() {
+            var activeMenuItems = self.activeMenuItems;
             var newActiveMenuItems = [];
 
-            this.MenuItemService.getAvailableMenuItems().forEach(function(item) {
+            self.MenuItemService.getAvailableMenuItems().forEach(function(item) {
                 if (activeMenuItems[item.path] === true) {
                     newActiveMenuItems.push(item);
                 }
             });
+        }
 
-            this.MenuItemService.setActiveMenuItems(newActiveMenuItems);
-        });
+        function init() {
+            self.MenuItemService.getActiveMenuItems().forEach(function(item) {
+                self.activeMenuItems[item.path] = true;
+            });
+        }
+
     }
-})(window.angular);
+
+})();
