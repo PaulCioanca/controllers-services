@@ -7,9 +7,6 @@
 
     var controller = ['$rootScope', 'MenuItemService', function($rootScope) {
         this.currentUser = null;
-        this.currentUser = {
-            name: "John"
-        };
 
         $rootScope.$on('login::successful', function(event, userData) {
             this.currentUser = userData;
