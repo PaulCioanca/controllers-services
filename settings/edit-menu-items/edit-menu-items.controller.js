@@ -25,6 +25,8 @@
                     newActiveMenuItems.push(item);
                 }
             });
+
+            self.MenuItemService.setActiveMenuItems(newActiveMenuItems);
         }
 
         function init() {

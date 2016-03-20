@@ -5,12 +5,6 @@
 
     function menuItemService() {
 
-        var MenuItemService = {
-            getActiveMenuItems: getActiveMenuItems,
-            getAvailableMenuItems: getAvailableMenuItems,
-            setActiveMenuItems: setActiveMenuItems
-        };
-
         var availableMenuItems = [
             {
                 path: 'account',
@@ -25,22 +19,29 @@
                 name: 'Edit menu items'
             }
         ];
+
+        var getAvailableMenuItems = function() {
+            return availableMenuItems;
+        };
+
         var activeMenuItems = [];
 
         activeMenuItems.push(availableMenuItems[0]);
         activeMenuItems.push(availableMenuItems[1]);
 
-        function getAvailableMenuItems() {
-            return availableMenuItems;
-        }
-
-        function getActiveMenuItems() {
+        var getActiveMenuItems = function() {
             return activeMenuItems;
-        }
+        };
 
-        function setActiveMenuItems(items) {
+        var setActiveMenuItems = function(items) {
             activeMenuItems = items;
-        }
+        };
+
+        var MenuItemService = {
+            getActiveMenuItems: getActiveMenuItems,
+            getAvailableMenuItems: getAvailableMenuItems,
+            setActiveMenuItems: setActiveMenuItems
+        };
 
         return MenuItemService;
     }
