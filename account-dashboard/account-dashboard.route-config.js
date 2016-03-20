@@ -1,9 +1,12 @@
-(function(angular) {
+/**
+ * Created by tciogmarean on 20/03/16.
+ */
+(function() {
     'use strict';
-    angular.module('presentation.accountDashboard', [
-        'ui.router'
-    ])
-    .config(routeConfig);
+
+    angular
+        .module('presentation.accountDashboard')
+        .config(routeConfig);
 
     function routeConfig($stateProvider) {
         $stateProvider
@@ -16,4 +19,4 @@
 
     }
 
-}(window.angular));
+}());
