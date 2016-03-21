@@ -1,5 +1,5 @@
 <ul class="navbar-menu">
-    <li ng-repeat="item in NavbarMenuController.MenuItemService.getActiveMenuItems()" >
+    <li ng-repeat="item in getActiveMenuItems()" >
         <a ui-sref="{{item.path}}">{{item.name}}</a>
     </li>
 </ul>

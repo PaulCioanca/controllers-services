@@ -8,7 +8,7 @@
         .module('presentation.login')
         .config(loginProvConfig);
 
-    loginProvConfig.$inject = ['loginProvProvider']
+    loginProvConfig.$inject = ['loginProvProvider'];
 
     function loginProvConfig(loginProvProvider) {
         loginProvProvider.setLoginUrl('login/users.json');

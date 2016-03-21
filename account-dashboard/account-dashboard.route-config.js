@@ -16,7 +16,5 @@
                 controllerAs: 'AccountDashboardCtrl',
                 templateUrl: 'account-dashboard/account-dashboard.html'
             })
-
     }
-
 }());

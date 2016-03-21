@@ -27,6 +27,7 @@
         ];
         var activeMenuItems = [];
 
+        // default items to be available at login
         activeMenuItems.push(availableMenuItems[0]);
         activeMenuItems.push(availableMenuItems[1]);
 

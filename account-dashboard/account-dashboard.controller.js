@@ -5,11 +5,15 @@
 		.module('presentation.accountDashboard')
 		.controller('AccountDashboardCtrl', accountDashboardController);
 
+	accountDashboardController.$inject = [ '$rootScope' ];
+
 	function accountDashboardController($rootScope) {
-		this.currentUser = null;
+		var self = this;
+
+		self.currentUser = undefined;
 
 		$rootScope.$on('login::successful', function(event, userData) {
-			this.currentUser = userData;
-		}.bind(this));
+			self.currentUser = userData;
+		});
 	}
 }());

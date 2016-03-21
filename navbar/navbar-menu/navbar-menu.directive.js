@@ -1,20 +1,22 @@
-(function(angular) {
+(function() {
     'use strict';
 
     angular.module('presentation.navbar.menu')
         .directive('navbarMenu', navbarMenuDirective);
 
-    var controller = ['MenuItemService', function(MenuItemService) {
-        this.MenuItemService = MenuItemService;
-    }];
+    navbarMenuDirective.$inject = [ 'MenuItemService' ];
 
-    function navbarMenuDirective() {
+    function navbarMenuDirective(MenuItemService) {
         return {
             restrict: 'E',
-            controller: controller,
-            controllerAs: 'NavbarMenuController',
-            templateUrl: 'navbar/navbar-menu/navbar-menu.html'
+            templateUrl: 'navbar/navbar-menu/navbar-menu.html',
+            link: function(scope) {
+                scope.getActiveMenuItems = getActiveMenuItems;
+
+                function getActiveMenuItems() {
+                    return MenuItemService.getActiveMenuItems();
+                }
+            }
         }
     }
-
-})(window.angular);
+})();
