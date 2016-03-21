@@ -14,12 +14,17 @@
             link: function(scope) {
                 scope.currentUser = undefined;
 
-                $rootScope.$on('login::successful', function(event, userData) {
+                var loginEventListener = $rootScope.$on('login::successful', function(event, userData) {
                     scope.currentUser = userData;
                 });
 
-                $rootScope.$on('accountUpdate::successful', function(event, userData) {
+                var accountUpdateEventListener = $rootScope.$on('accountUpdate::successful', function(event, userData) {
                     scope.currentUser = userData;
+                });
+
+                scope.$on('$destroy', function() {
+                    loginEventListener();
+                    accountUpdateEventListener();
                 });
             }
         };

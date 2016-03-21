@@ -18,8 +18,12 @@
 			$scope.$broadcast('parent::communication', "parent");
 		}
 
-		$scope.$on('child::communication', function(event, data) {
+		var childEventListener = $scope.$on('child::communication', function(event, data) {
 			self.message = "Event received from " + data;
+		});
+
+		$scope.$on('$destroy', function() {
+			childEventListener();
 		});
 	}
 }());

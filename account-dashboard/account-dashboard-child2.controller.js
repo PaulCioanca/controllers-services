@@ -18,13 +18,18 @@
 			$scope.$emit('child::communication', "Child #2");
 		}
 
-		$scope.$on('parent::communication', function(event, data) {
+		var parentEventListener = $scope.$on('parent::communication', function(event, data) {
 			self.message = "Event received from " + data;
 		});
 
 		// CHILDREN CANNOT LISTEN TO EVENTS FROM OTHER CHILDREN
-		$scope.$on('child::communication', function(event, data) {
+		var childEventListener = $scope.$on('child::communication', function(event, data) {
 			self.message = "Event received from " + data;
+		});
+
+		$scope.$on('$destroy', function() {
+			childEventListener();
+			parentEventListener();
 		});
 	}
 }());
