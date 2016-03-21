@@ -13,6 +13,20 @@
     </fieldset>
 
     <fieldset>
+        <label for="email">E-mail:</label>
+        <input id="email" type="email"
+               name="email"
+               ng-model="EditAccountCtrl.user.email"
+               required />
+
+            <ng-messages for="EditAccountCtrl.editAccountForm.email.$error"
+                         ng-if="EditAccountCtrl.editAccountForm.$submitted || EditAccountCtrl.editAccountForm.email.$touched">
+                <ng-message when="required">E-mail is required.</ng-message>
+                <ng-message when="email">E-mail is invalid.</ng-message>
+            </ng-messages>
+    </fieldset>
+
+    <fieldset>
         <label for="password">Password:</label>
         <input id="password" type="password"
                name="password"
