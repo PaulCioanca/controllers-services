@@ -24,7 +24,7 @@
         }
 
         function submit() {
-            if (self.editAccountForm.$valid) {
+            if (self.editAccountForm.$valid && self.passwordsMatch) {
                 $rootScope.$broadcast('accountUpdate::successful', angular.copy(self.user));
             }
         }
