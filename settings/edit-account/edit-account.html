@@ -1,15 +1,10 @@
-<form name="EditAccountCtrl.editAccountForm" novalidate ng-submit="EditAccountCtrl.submit()">
+<form name="EditAccountCtrl.editAccountForm"  ng-submit="EditAccountCtrl.submit()">
     <fieldset>
         <label for="username">Username:</label>
         <input id="username" type="text"
                name="username"
                ng-model="EditAccountCtrl.user.name"
                required />
-
-            <ng-messages for="EditAccountCtrl.editAccountForm.username.$error"
-                         ng-if="EditAccountCtrl.editAccountForm.$submitted || EditAccountCtrl.editAccountForm.username.$touched">
-                <ng-message when="required">Name is required.</ng-message>
-            </ng-messages>
     </fieldset>
 
     <fieldset>
@@ -17,12 +12,8 @@
         <input id="password" type="password"
                name="password"
                ng-model="EditAccountCtrl.user.password"
+               ng-change="EditAccountCtrl.validatePasswordMatch()"
                required />
-
-            <ng-messages for="EditAccountCtrl.editAccountForm.password.$error"
-                         ng-if="EditAccountCtrl.editAccountForm.$submitted || EditAccountCtrl.editAccountForm.password.$touched">
-                <ng-message when="required">Password is required.</ng-message>
-            </ng-messages>
     </fieldset>
 
     <fieldset>
@@ -30,12 +21,11 @@
         <input id="password-confirm" type="password"
                name="confirm"
                ng-model="EditAccountCtrl.user.passwordConfirm"
-               match="{{EditAccountCtrl.user.password}}" />
+               ng-change="EditAccountCtrl.validatePasswordMatch()">
 
-        <ng-messages for="EditAccountCtrl.editAccountForm.confirm.$error"
-                     ng-if="EditAccountCtrl.editAccountForm.$submitted || EditAccountCtrl.editAccountForm.confirm.$touched">
-            <ng-message when="match">Passwords must match.</ng-message>
-        </ng-messages>
+        <span ng-if="EditAccountCtrl.editAccountForm.$submitted || EditAccountCtrl.editAccountForm.confirm.$touched">
+            <span class="form-error" ng-if="!EditAccountCtrl.passwordsMatch">Passwords must match.</span>
+        </span>
     </fieldset>
 
     <button type="submit">Submit</button>
