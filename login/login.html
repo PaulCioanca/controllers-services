@@ -1,11 +1,13 @@
 <div>
     <form>
-        <div>
-          <input type="text" placeholder="username" ng-model="loginCtrl.username">
-        </div>
-        <div>
-          <input type="password" placeholder="password" ng-model="loginCtrl.password">
-        </div>
+        <fieldset>
+            <label>Username</label>
+            <input type="text" placeholder="Username" ng-model="loginCtrl.username" />
+        </fieldset>
+        <fieldset>
+            <label>Password</label>
+            <input type="password" placeholder="Password" ng-model="loginCtrl.password">
+        </fieldset>
         <button ng-click="loginCtrl.login()">Login</button>
     </form>
     <p class="error-msg" ng-if="loginCtrl.loginError">{{loginCtrl.loginError}}</p>

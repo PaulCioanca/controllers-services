@@ -64,3 +64,45 @@ html ul {
 .settings .panel h3 {
     margin: 0;
 }
+
+fieldset {
+    border: 0;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+button {
+    border-radius: 0;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.account-dashboard .parent {
+    width: 50%;
+    border: 1px solid black;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.account-dashboard .children {
+    width: 50%;
+    margin: 0 auto;
+    border: 1px solid black;
+    border-top: 0;
+    overflow: auto;
+}
+
+.account-dashboard .children > div {
+    width: 50%;
+    padding: 20px;
+    display: inline-block;
+    float: left;
+}
+
+.account-dashboard .children > div:first-child {
+    border-right: 1px solid black;
+}

@@ -17,6 +17,10 @@
                 $rootScope.$on('login::successful', function(event, userData) {
                     scope.currentUser = userData;
                 });
+
+                $rootScope.$on('accountUpdate::successful', function(event, userData) {
+                    scope.currentUser = userData;
+                });
             }
         };
     }

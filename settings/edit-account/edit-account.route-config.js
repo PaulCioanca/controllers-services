@@ -15,6 +15,8 @@
         $stateProvider
             .state('settings.editAccount', {
                 url: '',
+                controller: 'EditAccountCtrl',
+                controllerAs: 'EditAccountCtrl',
                 templateUrl: 'settings/edit-account/edit-account.html'
             })
 
