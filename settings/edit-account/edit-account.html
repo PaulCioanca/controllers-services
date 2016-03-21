@@ -1,7 +1,42 @@
-<form>
+<form name="EditAccountCtrl.editAccountForm" novalidate ng-submit="EditAccountCtrl.submit()">
     <fieldset>
         <label for="username">Username:</label>
-        <input type="text" id="username" ng-model="EditAccountCtrl.user.name" />
+        <input id="username" type="text"
+               name="username"
+               ng-model="EditAccountCtrl.user.name"
+               required />
+
+            <ng-messages for="EditAccountCtrl.editAccountForm.username.$error"
+                         ng-if="EditAccountCtrl.editAccountForm.$submitted || EditAccountCtrl.editAccountForm.username.$touched">
+                <ng-message when="required">Name is required.</ng-message>
+            </ng-messages>
     </fieldset>
-    <button ng-click="EditAccountCtrl.submit()">Submit</button>
+
+    <fieldset>
+        <label for="password">Password:</label>
+        <input id="password" type="password"
+               name="password"
+               ng-model="EditAccountCtrl.user.password"
+               required />
+
+            <ng-messages for="EditAccountCtrl.editAccountForm.password.$error"
+                         ng-if="EditAccountCtrl.editAccountForm.$submitted || EditAccountCtrl.editAccountForm.password.$touched">
+                <ng-message when="required">Password is required.</ng-message>
+            </ng-messages>
+    </fieldset>
+
+    <fieldset>
+        <label for="password-confirm">Confirm password:</label>
+        <input id="password-confirm" type="password"
+               name="confirm"
+               ng-model="EditAccountCtrl.user.passwordConfirm"
+               match="{{EditAccountCtrl.user.password}}" />
+
+        <ng-messages for="EditAccountCtrl.editAccountForm.confirm.$error"
+                     ng-if="EditAccountCtrl.editAccountForm.$submitted || EditAccountCtrl.editAccountForm.confirm.$touched">
+            <ng-message when="match">Passwords must match.</ng-message>
+        </ng-messages>
+    </fieldset>
+
+    <button type="submit">Submit</button>
 </form>

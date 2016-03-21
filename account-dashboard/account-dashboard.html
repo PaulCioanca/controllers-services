@@ -2,7 +2,7 @@
     <div class="parent">
         <h2>Parent</h2>
 
-        <span>{{ AccountDashboardCtrl.message }}</span>
+        <div>{{ AccountDashboardCtrl.message }}</div>
         <button ng-click="AccountDashboardCtrl.broadcastToChildren()">Send event to children</button>
     </div>
 
@@ -11,14 +11,14 @@
         <div ng-controller="AccountDashboardChild1Ctrl as child1Ctrl">
             <h2>Child #1</h2>
 
-            <span>{{ child1Ctrl.message }}</span>
+            <div>{{ child1Ctrl.message }}</div>
             <button ng-click="child1Ctrl.broadcastToParent()">Send event to parent</button>
         </div>
 
         <div ng-controller="AccountDashboardChild2Ctrl as child2Ctrl">
             <h2>Child #2</h2>
 
-            <span>{{ child2Ctrl.message }}</span>
+            <div>{{ child2Ctrl.message }}</div>
             <button ng-click="child2Ctrl.broadcastToParent()">Send event to parent</button>
         </div>
 

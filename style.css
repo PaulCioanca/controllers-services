@@ -61,6 +61,11 @@ html ul {
     margin-top: 16px;
 }
 
+.settings .panel form fieldset label {
+    display: inline-block;
+    width: 150px;
+}
+
 .settings .panel h3 {
     margin: 0;
 }
@@ -81,9 +86,13 @@ button {
     cursor: pointer;
 }
 
+.account-dashboard button {
+    margin-top: 10px;
+    font-size: 13pt;
+}
+
 .account-dashboard .parent {
     width: 50%;
-    border: 1px solid black;
     margin: 0 auto;
     padding: 20px;
 }
@@ -92,7 +101,6 @@ button {
     width: 50%;
     margin: 0 auto;
     border: 1px solid black;
-    border-top: 0;
     overflow: auto;
 }
 
@@ -105,4 +113,8 @@ button {
 
 .account-dashboard .children > div:first-child {
     border-right: 1px solid black;
+}
+
+ng-message {
+    color: red;
 }

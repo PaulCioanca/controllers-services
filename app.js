@@ -5,7 +5,9 @@ angular.module('presentation', [
 	'presentation.login',
 	'presentation.navbar',
 	'presentation.settings',
-	'presentation.accountDashboard'
+	'presentation.accountDashboard',
+	'presentation.match',
+	'ngMessages'
 	])
 	.config(routeConfig);
 

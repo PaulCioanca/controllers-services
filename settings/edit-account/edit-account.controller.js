@@ -14,7 +14,9 @@
         self.submit = submit;
 
         function submit() {
-            $rootScope.$broadcast('accountUpdate::successful', angular.copy(self.user));
+            if (self.editAccountForm.$valid) {
+                $rootScope.$broadcast('accountUpdate::successful', angular.copy(self.user));
+            }
         }
     }
 
