@@ -5,6 +5,10 @@
 
     function menuItemService() {
 
+        var getAvailableMenuItems = function() {
+            return availableMenuItems;
+        };
+
         var availableMenuItems = [
             {
                 path: 'account',
@@ -20,18 +24,14 @@
             }
         ];
 
-        var getAvailableMenuItems = function() {
-            return availableMenuItems;
+        var getActiveMenuItems = function() {
+            return activeMenuItems;
         };
 
         var activeMenuItems = [];
 
         activeMenuItems.push(availableMenuItems[0]);
         activeMenuItems.push(availableMenuItems[1]);
-
-        var getActiveMenuItems = function() {
-            return activeMenuItems;
-        };
 
         var setActiveMenuItems = function(items) {
             activeMenuItems = items;
