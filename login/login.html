@@ -2,13 +2,13 @@
     <form>
         <fieldset>
             <label>Username</label>
-            <input type="text" placeholder="Username" ng-model="loginCtrl.username" />
+            <input type="text" placeholder="Username" ng-model="vm.username" />
         </fieldset>
         <fieldset>
             <label>Password</label>
-            <input type="password" placeholder="Password" ng-model="loginCtrl.password">
+            <input type="password" placeholder="Password" ng-model="vm.password">
         </fieldset>
-        <button ng-click="loginCtrl.login()">Login</button>
+        <button ng-click="vm.login()">Login</button>
     </form>
-    <p class="error-msg" ng-if="loginCtrl.loginError">{{loginCtrl.loginError}}</p>
+    <p class="error-msg" ng-if="vm.loginError">{{vm.loginError}}</p>
 </div>

@@ -1,11 +1,10 @@
 /**
- * Created by tciogmarean on 18/03/16.
+ * Created by tciogmarean on 23/03/16.
  */
 (function(){
     'use strict';
 
-    angular
-        .module('presentation.login')
+    angular.module('presentation')
         .config(loginProvConfig);
 
     loginProvConfig.$inject = ['loginProvProvider'];

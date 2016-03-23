@@ -8,14 +8,14 @@
     editAccountCtrl.$inject = ['$rootScope'];
 
     function editAccountCtrl($rootScope) {
-        var self = this;
+        var vm = this;
 
-        self.user = {};
-        self.submit = submit;
+        vm.user = {};
+        vm.submit = submit;
 
         function submit() {
-            if (self.editAccountForm.$valid) {
-                $rootScope.$broadcast('accountUpdate::successful', angular.copy(self.user));
+            if (vm.editAccountForm.$valid) {
+                $rootScope.$broadcast('accountUpdate::successful', angular.copy(vm.user));
             }
         }
     }

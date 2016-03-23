@@ -1,13 +1,13 @@
-<form name="EditAccountCtrl.editAccountForm" novalidate ng-submit="EditAccountCtrl.submit()">
+<form name="vm.editAccountForm" novalidate ng-submit="vm.submit()">
     <fieldset>
         <label for="username">Username:</label>
         <input id="username" type="text"
                name="username"
-               ng-model="EditAccountCtrl.user.name"
+               ng-model="vm.user.name"
                required />
 
-            <ng-messages for="EditAccountCtrl.editAccountForm.username.$error"
-                         ng-if="EditAccountCtrl.editAccountForm.$submitted || EditAccountCtrl.editAccountForm.username.$touched">
+            <ng-messages for="vm.editAccountForm.username.$error"
+                         ng-if="vm.editAccountForm.$submitted || vm.editAccountForm.username.$touched">
                 <ng-message when="required">Name is required.</ng-message>
             </ng-messages>
     </fieldset>
@@ -16,11 +16,11 @@
         <label for="email">E-mail:</label>
         <input id="email" type="email"
                name="email"
-               ng-model="EditAccountCtrl.user.email"
+               ng-model="vm.user.email"
                required />
 
-            <ng-messages for="EditAccountCtrl.editAccountForm.email.$error"
-                         ng-if="EditAccountCtrl.editAccountForm.$submitted || EditAccountCtrl.editAccountForm.email.$touched">
+            <ng-messages for="vm.editAccountForm.email.$error"
+                         ng-if="vm.editAccountForm.$submitted || vm.editAccountForm.email.$touched">
                 <ng-message when="required">E-mail is required.</ng-message>
                 <ng-message when="email">E-mail is invalid.</ng-message>
             </ng-messages>
@@ -30,11 +30,11 @@
         <label for="password">Password:</label>
         <input id="password" type="password"
                name="password"
-               ng-model="EditAccountCtrl.user.password"
+               ng-model="vm.user.password"
                required />
 
-            <ng-messages for="EditAccountCtrl.editAccountForm.password.$error"
-                         ng-if="EditAccountCtrl.editAccountForm.$submitted || EditAccountCtrl.editAccountForm.password.$touched">
+            <ng-messages for="vm.editAccountForm.password.$error"
+                         ng-if="vm.editAccountForm.$submitted || vm.editAccountForm.password.$touched">
                 <ng-message when="required">Password is required.</ng-message>
             </ng-messages>
     </fieldset>
@@ -43,11 +43,11 @@
         <label for="password-confirm">Confirm password:</label>
         <input id="password-confirm" type="password"
                name="confirm"
-               ng-model="EditAccountCtrl.user.passwordConfirm"
-               match="{{EditAccountCtrl.user.password}}" />
+               ng-model="vm.user.passwordConfirm"
+               match="{{vm.user.password}}" />
 
-        <ng-messages for="EditAccountCtrl.editAccountForm.confirm.$error"
-                     ng-if="EditAccountCtrl.editAccountForm.$submitted || EditAccountCtrl.editAccountForm.confirm.$touched">
+        <ng-messages for="vm.editAccountForm.confirm.$error"
+                     ng-if="vm.editAccountForm.$submitted || vm.editAccountForm.confirm.$touched">
             <ng-message when="match">Passwords must match.</ng-message>
         </ng-messages>
     </fieldset>

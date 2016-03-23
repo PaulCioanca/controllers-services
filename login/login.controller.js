@@ -8,20 +8,17 @@
 	loginCtrl.$inject = ['$rootScope', '$location', 'loginProv'];
 
 	function loginCtrl($rootScope, $location, loginProv) {
-		var self = this;
+		var vm = this;
 
-		self.username = undefined;
-		self.password = undefined;
-		self.loginError = undefined;
-		self.login = login;
+		vm.login = login;
 
 		function login() {
-			loginProv.login(self.username, self.password).then(
+			loginProv.login(vm.username, vm.password).then(
 				function(data){
 					$rootScope.$broadcast('login::successful', data);
 					$location.path('account');
 				}, function(error){
-					self.loginError = error;
+					vm.loginError = error;
 				});
 		}
 	}
