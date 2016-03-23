@@ -1,14 +1,29 @@
-<form name="EditAccountCtrl.editAccountForm" novalidate ng-submit="EditAccountCtrl.submit()">
+<form name="vm.editAccountForm" novalidate ng-submit="vm.submit()">
     <fieldset>
         <label for="username">Username:</label>
         <input id="username" type="text"
                name="username"
-               ng-model="EditAccountCtrl.user.name"
+               ng-model="vm.user.name"
                required />
 
-            <span ng-if="EditAccountCtrl.editAccountForm.username.$error &&
-                         (EditAccountCtrl.editAccountForm.$submitted || EditAccountCtrl.editAccountForm.username.$touched)">
-                <span class="form-error" ng-if="EditAccountCtrl.editAccountForm.username.$error.required">Name is required.</span>
+            <span ng-if="vm.editAccountForm.username.$error &&
+                         (vm.editAccountForm.$submitted || vm.editAccountForm.username.$touched)">
+                <span class="form-error" ng-if="vm.editAccountForm.username.$error.required">Name is required.</span>
+            </span>
+    </fieldset>
+
+    <fieldset>
+        <label for="phone-number">Phone number</label>
+        <input id="phone-number" type="text"
+               name="phone"
+               ng-model="vm.user.phone"
+               ng-pattern="vm.validPhoneNumber"
+               required />
+
+        <span ng-if="vm.editAccountForm.phone.$error &&
+                         (vm.editAccountForm.$submitted || vm.editAccountForm.phone.$touched)">
+                <span class="form-error" ng-if="vm.editAccountForm.phone.$error.required">Phone number is required.</span>
+                <span class="form-error" ng-if="vm.editAccountForm.phone.$error.pattern">Phone number must start with + followed by the country code and national number.</span>
             </span>
     </fieldset>
 
@@ -16,13 +31,13 @@
         <label for="email">E-mail:</label>
         <input id="email" type="email"
                name="email"
-               ng-model="EditAccountCtrl.user.email"
+               ng-model="vm.user.email"
                required />
 
-            <span ng-if="EditAccountCtrl.editAccountForm.email.$error &&
-                         (EditAccountCtrl.editAccountForm.$submitted || EditAccountCtrl.editAccountForm.email.$touched)">
-                <span class="form-error" ng-if="EditAccountCtrl.editAccountForm.email.$error.required">E-mail is required.</span>
-                <span class="form-error" ng-if="EditAccountCtrl.editAccountForm.email.$error.email">E-mail is not valid.</span>
+            <span ng-if="vm.editAccountForm.email.$error &&
+                         (vm.editAccountForm.$submitted || vm.editAccountForm.email.$touched)">
+                <span class="form-error" ng-if="vm.editAccountForm.email.$error.required">E-mail is required.</span>
+                <span class="form-error" ng-if="vm.editAccountForm.email.$error.email">E-mail is not valid.</span>
             </span>
     </fieldset>
 
@@ -30,13 +45,13 @@
         <label for="password">Password:</label>
         <input id="password" type="password"
                name="password"
-               ng-model="EditAccountCtrl.user.password"
-               ng-change="EditAccountCtrl.validatePasswordMatch()"
+               ng-model="vm.user.password"
+               ng-change="vm.validatePasswordMatch()"
                required />
 
-            <span ng-if="EditAccountCtrl.editAccountForm.password.$error &&
-                         (EditAccountCtrl.editAccountForm.$submitted || EditAccountCtrl.editAccountForm.password.$touched)">
-                <span class="form-error" ng-if="EditAccountCtrl.editAccountForm.password.$error.required">Password is required.</span>
+            <span ng-if="vm.editAccountForm.password.$error &&
+                         (vm.editAccountForm.$submitted || vm.editAccountForm.password.$touched)">
+                <span class="form-error" ng-if="vm.editAccountForm.password.$error.required">Password is required.</span>
             </span>
     </fieldset>
 
@@ -44,11 +59,11 @@
         <label for="password-confirm">Confirm password:</label>
         <input id="password-confirm" type="password"
                name="confirm"
-               ng-model="EditAccountCtrl.user.passwordConfirm"
-               ng-change="EditAccountCtrl.validatePasswordMatch()" />
+               ng-model="vm.user.passwordConfirm"
+               ng-change="vm.validatePasswordMatch()" />
 
-        <span ng-if="EditAccountCtrl.editAccountForm.$submitted || EditAccountCtrl.editAccountForm.confirm.$touched">
-            <span class="form-error" ng-if="!EditAccountCtrl.passwordsMatch">Passwords must match.</span>
+        <span ng-if="vm.editAccountForm.$submitted || vm.editAccountForm.confirm.$touched">
+            <span class="form-error" ng-if="!vm.passwordsMatch">Passwords must match.</span>
         </span>
     </fieldset>
 

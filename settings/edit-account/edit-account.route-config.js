@@ -16,7 +16,7 @@
             .state('settings.editAccount', {
                 url: '',
                 controller: 'EditAccountCtrl',
-                controllerAs: 'EditAccountCtrl',
+                controllerAs: 'vm',
                 templateUrl: 'settings/edit-account/edit-account.html'
             })
 
