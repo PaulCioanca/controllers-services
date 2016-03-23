@@ -2,9 +2,8 @@
     'use strict';
 
     angular.module('presentation.example')
-        .controller('ExampleCtrl', ExampleCtrl);
+        .controller('ExampleCtrl', ['$scope', ExampleCtrl]);
 
-    ExampleCtrl.$inject = ['$scope'];
     function ExampleCtrl($scope) {
         $scope.text = "Testing this";
     }

@@ -1,8 +1,15 @@
 <div class="example-module" ng-controller="ExampleCtrl">
     <div class="parent">
+        <input type="text" ng-model="text" />
 
+        <div>
+            {{ text }}
+        </div>
     </div>
 
-    <div class="child">
+    <div class="child" ng-controller="ExampleChildCtrl">
+        <div>
+            {{ text }}
+        </div>
     </div>
 </div>
