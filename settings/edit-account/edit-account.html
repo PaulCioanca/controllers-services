@@ -13,6 +13,21 @@
     </fieldset>
 
     <fieldset>
+        <label for="phone-number">Phone number</label>
+        <input id="phone-number" type="text"
+               name="phone"
+               ng-model="vm.user.phone"
+               ng-pattern="vm.validPhoneNumber"
+               required />
+
+        <ng-messages for="vm.editAccountForm.phone.$error"
+                     ng-if="vm.editAccountForm.$submitted || vm.editAccountForm.phone.$touched">
+            <ng-message when="required">Phone number is required.</ng-message>
+            <ng-message when="pattern">Phone number must start with + followed by the country code and national number.</ng-message>
+        </ng-messages>
+    </fieldset>
+
+    <fieldset>
         <label for="email">E-mail:</label>
         <input id="email" type="email"
                name="email"

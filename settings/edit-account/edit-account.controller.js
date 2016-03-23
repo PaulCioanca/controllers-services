@@ -11,6 +11,7 @@
         var vm = this;
 
         vm.user = {};
+        vm.validPhoneNumber = /^\+(?:[0-9] ?){6,14}[0-9]$/;
         vm.submit = submit;
 
         function submit() {
