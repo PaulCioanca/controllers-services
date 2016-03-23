@@ -16,7 +16,7 @@
             .state('settings.editMenuItems', {
                 url: '/edit-menu-items',
                 controller: 'EditMenuItemsCtrl',
-                controllerAs: 'EditMenuItemsCtrl',
+                controllerAs: 'vm',
                 templateUrl: 'settings/edit-menu-items/edit-menu-items.html'
             })
 

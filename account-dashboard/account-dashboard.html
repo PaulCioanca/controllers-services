@@ -2,8 +2,8 @@
     <div class="parent">
         <h2>Parent</h2>
 
-        <div>{{ AccountDashboardCtrl.message }}</div>
-        <button ng-click="AccountDashboardCtrl.broadcastToChildren()">Send event to children</button>
+        <div>{{ vm.message }}</div>
+        <button ng-click="vm.broadcastToChildren()">Send event to children</button>
     </div>
 
     <div class="children">

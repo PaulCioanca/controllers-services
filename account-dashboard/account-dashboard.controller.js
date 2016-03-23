@@ -3,11 +3,11 @@
 
 	angular
 		.module('presentation.accountDashboard')
-		.controller('AccountDashboardCtrl', accountDashboardParentCtrl);
+		.controller('AccountDashboardCtrl', AccountDashboardCtrl);
 
-	accountDashboardParentCtrl.$inject = [ '$scope' ];
+	AccountDashboardCtrl.$inject = [ '$scope' ];
 
-	function accountDashboardParentCtrl($scope) {
+	function AccountDashboardCtrl($scope) {
 		var self = this;
 
 		self.message = undefined;
@@ -26,4 +26,4 @@
 			childEventListener();
 		});
 	}
-}());
+})();

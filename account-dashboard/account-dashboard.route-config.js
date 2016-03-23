@@ -13,8 +13,8 @@
             .state('account', {
                 url: '/account',
                 controller: 'AccountDashboardCtrl',
-                controllerAs: 'AccountDashboardCtrl',
+                controllerAs: 'vm',
                 templateUrl: 'account-dashboard/account-dashboard.html'
             })
     }
-}());
+})();

@@ -8,6 +8,7 @@
 		'presentation.settings',
 		'presentation.accountDashboard',
 		'presentation.match',
+		'presentation.example',
 		'ngMessages'
 	]);
 

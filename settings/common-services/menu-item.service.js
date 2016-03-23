@@ -1,9 +1,9 @@
 (function() {
     angular
         .module('presentation.settings')
-        .factory('MenuItemService', menuItemService);
+        .factory('MenuItemService', MenuItemService);
 
-    function menuItemService() {
+    function MenuItemService() {
 
         var MenuItemService = {
             getActiveMenuItems: getActiveMenuItems,

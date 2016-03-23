@@ -3,11 +3,11 @@
 
     angular
         .module('presentation.settings.editMenuItems')
-        .controller('EditMenuItemsCtrl', editMenuItemsCtrl);
+        .controller('EditMenuItemsCtrl', EditMenuItemsCtrl);
 
-    editMenuItemsCtrl.$inject = ['MenuItemService'];
+    EditMenuItemsCtrl.$inject = ['MenuItemService'];
 
-    function editMenuItemsCtrl(MenuItemService) {
+    function EditMenuItemsCtrl(MenuItemService) {
         var self = this;
 
         self.activeMenuItems = {};

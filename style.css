@@ -118,3 +118,16 @@ button {
 ng-message {
     color: red;
 }
+
+.example-module .parent {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.example-module .child {
+    width: 50%;
+    margin: 0 auto;
+    border: 1px solid black;
+    overflow: auto;
+}

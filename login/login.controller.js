@@ -3,11 +3,11 @@
 
 	angular
 		.module('presentation.login')
-		.controller('LoginCtrl', loginCtrl);
+		.controller('LoginCtrl', LoginCtrl);
 
-	loginCtrl.$inject = ['$rootScope', '$location', 'loginProv'];
+	LoginCtrl.$inject = ['$rootScope', '$location', 'loginProv'];
 
-	function loginCtrl($rootScope, $location, loginProv) {
+	function LoginCtrl($rootScope, $location, loginProv) {
 		var vm = this;
 
 		vm.login = login;

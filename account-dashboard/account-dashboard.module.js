@@ -4,4 +4,4 @@
     angular.module('presentation.accountDashboard', [
         'ui.router'
     ]);
-}());
+})();

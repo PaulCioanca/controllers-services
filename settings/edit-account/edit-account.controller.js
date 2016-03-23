@@ -3,11 +3,11 @@
 
     angular
         .module('presentation.settings.editAccount')
-        .controller('EditAccountCtrl', editAccountCtrl);
+        .controller('EditAccountCtrl', EditAccountCtrl);
 
-    editAccountCtrl.$inject = ['$rootScope'];
+    EditAccountCtrl.$inject = ['$rootScope'];
 
-    function editAccountCtrl($rootScope) {
+    function EditAccountCtrl($rootScope) {
         var vm = this;
 
         vm.user = {};
