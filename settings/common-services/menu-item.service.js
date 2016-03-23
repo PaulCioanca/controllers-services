@@ -31,6 +31,8 @@
         activeMenuItems.push(availableMenuItems[0]);
         activeMenuItems.push(availableMenuItems[1]);
 
+        return MenuItemService;
+
         function getAvailableMenuItems() {
             return availableMenuItems;
         }
@@ -43,6 +45,5 @@
             activeMenuItems = items;
         }
 
-        return MenuItemService;
     }
 })();
