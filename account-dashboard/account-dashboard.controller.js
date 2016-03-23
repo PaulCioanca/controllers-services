@@ -8,18 +8,19 @@
 	AccountDashboardCtrl.$inject = [ '$scope' ];
 
 	function AccountDashboardCtrl($scope) {
-		var self = this;
+		var vm = this;
 
-		self.message = undefined;
-		self.broadcastToChildren = broadcastToChildren;
+		vm.selectedFruit = "";
+		vm.broadcastToChildren = broadcastToChildren;
+
+		vm.fruits = ['Apple', 'Pear', 'Orange', 'Banana', 'Avocado'];
 
 		function broadcastToChildren() {
-			self.message = "Event sent to children";
-			$scope.$broadcast('parent::communication', "parent");
+			$scope.$broadcast('parent::communication', vm.selectedFruit);
 		}
 
 		var childEventListener = $scope.$on('child::communication', function(event, data) {
-			self.message = "Event received from " + data;
+			vm.selectedFruit = data;
 		});
 
 		$scope.$on('$destroy', function() {

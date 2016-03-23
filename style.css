@@ -111,6 +111,13 @@ button {
     float: left;
 }
 
+.account-dashboard select {
+    max-width: 200px;
+    width: 100%;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
 .account-dashboard .children > div:first-child {
     border-right: 1px solid black;
 }

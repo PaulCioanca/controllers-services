@@ -3,28 +3,26 @@
 
 	angular
 		.module('presentation.accountDashboard')
-		.controller('AccountDashboardChild1Ctrl', accountDashboardChild1Ctrl);
+		.controller('AccountDashboardChild1Ctrl', AccountDashboardChild1Ctrl);
 
-	accountDashboardChild1Ctrl.$inject = [ '$scope' ];
+	AccountDashboardChild1Ctrl.$inject = [ '$scope' ];
 
-	function accountDashboardChild1Ctrl($scope) {
-		var self = this;
+	function AccountDashboardChild1Ctrl($scope) {
+		var vm = this;
 
-		self.message = undefined;
-		self.broadcastToParent = broadcastToParent;
+		vm.selectedFruit = "";
+		vm.emitChangeEvent = emitChangeEvent;
 
-		function broadcastToParent() {
-			self.message = "Event sent to parent";
-			$scope.$emit('child::communication', "Child #1");
+		function emitChangeEvent() {
+			$scope.$emit('child::communication', vm.selectedFruit);
 		}
 
 		var parentEventListener = $scope.$on('parent::communication', function(event, data) {
-			self.message = "Event received from " + data;
+			vm.selectedFruit = data;
 		});
 
-		// CHILDREN CANNOT LISTEN TO EVENTS FROM OTHER CHILDREN
 		var childEventListener = $scope.$on('child::communication', function(event, data) {
-			self.message = "Event received from " + data;
+			vm.selectedFruit = data;
 		});
 
 		$scope.$on('$destroy', function() {

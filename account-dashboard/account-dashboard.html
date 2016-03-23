@@ -2,8 +2,15 @@
     <div class="parent">
         <h2>Parent</h2>
 
-        <div>{{ vm.message }}</div>
-        <button ng-click="vm.broadcastToChildren()">Send event to children</button>
+        <div>{{ vm.selectedFruit }}</div>
+
+        <select ng-model="vm.selectedFruit"
+                ng-change="vm.broadcastToChildren()"
+                ng-options="fruit for fruit in vm.fruits"
+                size="7"
+        ></select>
+
+
     </div>
 
     <div class="children">
@@ -11,15 +18,19 @@
         <div ng-controller="AccountDashboardChild1Ctrl as child1Ctrl">
             <h2>Child #1</h2>
 
-            <div>{{ child1Ctrl.message }}</div>
-            <button ng-click="child1Ctrl.broadcastToParent()">Send event to parent</button>
+            <div>{{ child1Ctrl.selectedFruit }}</div>
+
+            <select ng-model="child1Ctrl.selectedFruit"
+                    ng-change="child1Ctrl.emitChangeEvent()"
+                    ng-options="fruit for fruit in vm.fruits"
+                    size="7"
+            ></select>
         </div>
 
         <div ng-controller="AccountDashboardChild2Ctrl as child2Ctrl">
             <h2>Child #2</h2>
 
-            <div>{{ child2Ctrl.message }}</div>
-            <button ng-click="child2Ctrl.broadcastToParent()">Send event to parent</button>
+            <div>{{ child2Ctrl.selectedFruit }}</div>
         </div>
 
     </div>
