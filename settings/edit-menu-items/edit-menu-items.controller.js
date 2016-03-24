@@ -8,30 +8,30 @@
     EditMenuItemsCtrl.$inject = ['MenuItemService'];
 
     function EditMenuItemsCtrl(MenuItemService) {
-        var self = this;
+        var vm = this;
 
-        self.activeMenuItems = {};
-        self.MenuItemService = MenuItemService;
-        self.updateNavMenu = updateNavMenu;
+        vm.activeMenuItems = {};
+        vm.MenuItemService = MenuItemService;
+        vm.updateNavMenu = updateNavMenu;
 
         init();
 
         function updateNavMenu() {
-            var activeMenuItems = self.activeMenuItems;
+            var activeMenuItems = vm.activeMenuItems;
             var newActiveMenuItems = [];
 
-            self.MenuItemService.getAvailableMenuItems().forEach(function(item) {
+            vm.MenuItemService.getAvailableMenuItems().forEach(function(item) {
                 if (activeMenuItems[item.path] === true) {
                     newActiveMenuItems.push(item);
                 }
             });
 
-            self.MenuItemService.setActiveMenuItems(newActiveMenuItems);
+            vm.MenuItemService.setActiveMenuItems(newActiveMenuItems);
         }
 
         function init() {
-            self.MenuItemService.getActiveMenuItems().forEach(function(item) {
-                self.activeMenuItems[item.path] = true;
+            vm.MenuItemService.getActiveMenuItems().forEach(function(item) {
+                vm.activeMenuItems[item.path] = true;
             });
         }
 
